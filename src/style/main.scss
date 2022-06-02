@@ -1,0 +1,23 @@
+@import url('element-plus/theme-chalk/el-message.css');
+@import url(./var.scss);
+@import url(./normal.scss);
+@import url(./layout.css);
+@import url(./loading.scss);
+
+.m-rich-wrap {
+    width: 100%;
+    height: 250px;
+    border: 1px solid #dcdfe6;
+    border-radius: 5px;
+    overflow: hidden;
+    .w-e-toolbar p,
+    .w-e-text-container p,
+    .w-e-menu-panel p {
+        color: #606266;
+        font-size: 14px !important;
+    }
+}
+
+.m-page-top {
+    margin-top: 20px;
+}
