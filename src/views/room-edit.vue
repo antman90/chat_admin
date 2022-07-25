@@ -90,7 +90,9 @@ const onSubmit = () => {
   tipConfigSend();
   let { name, showRoom, ...rest } = form.value;
   // filter room of deleted
-  showRoom = showRoom.filter((item: string) => allSiteArr.value.includes(item));
+  const allRoom = allRoomArr.value.map((item: any) => item.name);
+  showRoom = showRoom.filter((item: string) => allRoom.includes(item));
+  console.log(showRoom);
   showRoom.push(name);
   showRoom = Array.from(new Set(showRoom));
   showRoom = showRoom.join(",");
@@ -135,7 +137,9 @@ onMounted(() => {
     <el-form-item label="人数上限">
       <el-input v-model="form.limit" type="number" min="0" />
     </el-form-item>
-
+    <el-form-item label="问候语">
+      <el-input v-model="form.greeting" />
+    </el-form-item>
     <el-form-item label="密码">
       <el-input v-model="form.password" />
     </el-form-item>

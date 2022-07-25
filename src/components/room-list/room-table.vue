@@ -74,7 +74,7 @@ onMounted(() => {
     <el-table-column label="序号" #default="scope" width="100px">
       {{ calcIndexDesc(total, curPage, pageSize, scope.$index) }}
     </el-table-column>
-    <el-table-column label="房间名" #default="scope" width="220px">
+    <el-table-column label="房间名" #default="scope">
       <el-link type="primary">
         <router-link
           :to="{
@@ -92,6 +92,7 @@ onMounted(() => {
     <el-table-column label="聊天框公告" prop="isTip" #default="scope">
       {{ scope.row.isTip ? "开启" : "关闭" }}
     </el-table-column>
+    <el-table-column label="问候语" prop="greeting" />
     <el-table-column label="密码" prop="passwordTxt" />
     <el-table-column label="验证密码" prop="isPassword" #default="scope">
       <el-switch
